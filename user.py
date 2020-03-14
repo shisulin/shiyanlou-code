@@ -64,7 +64,8 @@ def main():
 						print('登录成功！')
 					else:
 						print('密码错误！')
-                    break
+					break
+					
 			if(TAG == 0):
 				print('用户名错误！')
 
