@@ -29,7 +29,7 @@ class User:
 def main():
 
 	userList = [] #创建用户列表
-	print('---------欢迎---------')
+	print('■■■■■■■■■■ 欢迎 ■■■■■■■■■■')
 	while 1:
 		choose = int(input('''
 		请选择：
@@ -46,7 +46,6 @@ def main():
 			#TODO
 			newUser = User(name,email,password)
 			userList.append(newUser)
-			print('注册成功!')
 
 
 		if choose == 2:
@@ -56,18 +55,18 @@ def main():
 			password = input('password:')
 
 			# TODO
-			TAG = 0
+			inList = False
 			for user in userList:
-				if(user.check_email(email)):
-					TAG =1
-					if(user.check_password(password)):
-						print('登录成功！')
+				if user.check_email(email):
+					inList = True
+					if user.check_password(password):
+						print(' 登录成功')
 					else:
-						print('密码错误！')
+						print(' 用户名或密码错误')
 					break
 					
-			if(TAG == 0):
-				print('用户名错误！')
+			if inList == False:
+				print(' 请输入正确的 email')
 
 		if choose == 3:
 			break
